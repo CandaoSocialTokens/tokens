@@ -33,6 +33,7 @@ contract CandaoToken is Initializable, ERC20Upgradeable, ERC20BurnableUpgradeabl
         _grantRole(SNAPSHOT_ROLE, msg.sender);
         _grantRole(PAUSER_ROLE, msg.sender);
         _grantRole(UPGRADER_ROLE, msg.sender);
+        _mint(msg.sender, 18800000000 * 10 ** decimals());
     }
 
     function snapshot() public onlyRole(SNAPSHOT_ROLE) {
